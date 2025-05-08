@@ -37,7 +37,7 @@ def test_insert():
 
     pq.insert(empty_heap, 1, 1)
     assert empty_heap["size"] is not None
-    assert empty_heap["elements"] is None
+    assert empty_heap["elements"] is not None
     assert empty_heap["cmp_function"] is not None
 
     pq.insert(some_heap, 2, 2)
