@@ -103,25 +103,20 @@ def get_first_priority (my_heap):
 
 def remove (my_heap):
 
-    if my_heap['size'] > 0:
-        # guardamos el primer elemento
-        a = lt.get_element(my_heap['elements'], 1)
-        first = a['index']
+    # guardamos el primer elemento
+    first = lt.get_element(my_heap['elements'], 1)
     
-        # intercambiamos el primero con el último
-        lt.exchange(my_heap['elements'], 1, my_heap['size'])
+    # intercambiamos el primero con el último
+    lt.exchange(my_heap['elements'], 1, my_heap['size'])
     
-        # eliminamos el último (que es el primero)
-        lt.remove_last(my_heap['elements'])
+    # eliminamos el último (que es el primero)
+    lt.remove_last(my_heap['elements'])
     
-        # disminuimos el tamaño del heap
-        my_heap['size'] -= 1
+    # disminuimos el tamaño del heap
+    my_heap['size'] -= 1
     
-        # restauramos la propiedad de heap
-        sink(my_heap, 1)
-    else: 
-        first = None
-
+    # restauramos la propiedad de heap
+    sink(my_heap, 1)
     
     return first
 
@@ -164,3 +159,7 @@ def sink(my_heap: dict, pos: int):
 
    
 
+a = new_heap()
+a = insert(a,'si','aja')
+a = get_first_priority(a)
+print(a)
